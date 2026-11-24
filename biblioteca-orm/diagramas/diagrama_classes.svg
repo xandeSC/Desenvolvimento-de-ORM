@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="900" viewBox="0 0 1250 900">
+<rect width="1250" height="900" fill="white"/>
+<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="11" refY="5" orient="auto"><path d="M 1,1 L 11,5 L 1,9" fill="none" stroke="#5a7388" stroke-width="1.6"/></marker><marker id="triangle" markerWidth="14" markerHeight="14" refX="13" refY="7" orient="auto"><path d="M 1,1 L 13,7 L 1,13 Z" fill="white" stroke="#365267" stroke-width="1.7"/></marker></defs>
+<text x="50" y="45" font-size="29" font-weight="700" font-family="DejaVu Sans" fill="#16334b">Diagrama UML de classes — BibliotecaORM</text>
+<text x="50" y="71" font-size="14" font-family="DejaVu Sans" fill="#5a7181">Data Mapper simplificado: PHP puro, PDO, MySQL 8 • responsabilidades de domínio e infraestrutura</text>
+<rect x="45" y="100" width="360" height="198" rx="13" fill="#fff4d7" stroke="#43617b" stroke-width="2"/>
+<text x="63" y="126" fill="#536a80" font-family="DejaVu Sans" font-size="13">«interface»</text>
+<text x="63" y="152" fill="#183a55" font-family="DejaVu Sans" font-size="21" font-weight="700">RepositoryInterface</text>
+<path d="M 46 165 H 404" stroke="#9eb2c2" stroke-width="1"/>
+<text x="63" y="190" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ buscar(id: int): ?object</text>
+<text x="63" y="214" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ listar(): array</text>
+<text x="63" y="238" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ salvar(entidade: object): void</text>
+<text x="63" y="262" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ excluir(id: int): void</text>
+<rect x="445" y="100" width="360" height="198" rx="13" fill="#eee9ff" stroke="#43617b" stroke-width="2"/>
+<text x="463" y="126" fill="#536a80" font-family="DejaVu Sans" font-size="13">«abstract»</text>
+<text x="463" y="152" fill="#183a55" font-family="DejaVu Sans" font-size="21" font-weight="700">AbstractRepository</text>
+<path d="M 446 165 H 804" stroke="#9eb2c2" stroke-width="1"/>
+<text x="463" y="190" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7"># pdo: PDO</text>
+<text x="463" y="214" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ buscar / listar / salvar / excluir</text>
+<text x="463" y="238" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7"> # tabela / colunas / hidratar / extrair</text>
+<text x="463" y="262" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7"> # identidade / definirIdentidade</text>
+<rect x="845" y="100" width="360" height="198" rx="13" fill="#edf4f8" stroke="#43617b" stroke-width="2"/>
+<text x="863" y="126" fill="#536a80" font-family="DejaVu Sans" font-size="13">«infraestrutura»</text>
+<text x="863" y="152" fill="#183a55" font-family="DejaVu Sans" font-size="21" font-weight="700">Conexao</text>
+<path d="M 846 165 H 1204" stroke="#9eb2c2" stroke-width="1"/>
+<text x="863" y="190" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ abrir(): PDO</text>
+<text x="863" y="214" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">usa variáveis de ambiente</text>
+<text x="863" y="238" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">ERRMODE_EXCEPTION</text>
+<text x="863" y="262" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">ATTR_EMULATE_PREPARES = false</text>
+<rect x="45" y="376" width="360" height="195" rx="13" fill="#f2f7fc" stroke="#43617b" stroke-width="2"/>
+<text x="63" y="402" fill="#536a80" font-family="DejaVu Sans" font-size="13">«classe concreta»</text>
+<text x="63" y="428" fill="#183a55" font-family="DejaVu Sans" font-size="21" font-weight="700">LivroRepository</text>
+<path d="M 46 441 H 404" stroke="#9eb2c2" stroke-width="1"/>
+<text x="63" y="466" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ buscarComAutores(id): ?Livro</text>
+<text x="63" y="490" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ autoresDoLivro(id): array</text>
+<text x="63" y="514" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ associarAutor(livroId, autorId)</text>
+<text x="63" y="538" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7"># tabela / hidratar / extrair</text>
+<rect x="445" y="376" width="360" height="195" rx="13" fill="#f2f7fc" stroke="#43617b" stroke-width="2"/>
+<text x="463" y="402" fill="#536a80" font-family="DejaVu Sans" font-size="13">«classe concreta»</text>
+<text x="463" y="428" fill="#183a55" font-family="DejaVu Sans" font-size="21" font-weight="700">AutorRepository</text>
+<path d="M 446 441 H 804" stroke="#9eb2c2" stroke-width="1"/>
+<text x="463" y="466" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7"># tabela(): string</text>
+<text x="463" y="490" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7"> # hidratar(linha): Autor</text>
+<text x="463" y="514" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7"> # extrair(entidade): array</text>
+<text x="463" y="538" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7"> # identidade / definirIdentidade</text>
+<rect x="845" y="376" width="360" height="195" rx="13" fill="#eaf7eb" stroke="#43617b" stroke-width="2"/>
+<text x="863" y="402" fill="#536a80" font-family="DejaVu Sans" font-size="13">«serviço consumidor»</text>
+<text x="863" y="428" fill="#183a55" font-family="DejaVu Sans" font-size="21" font-weight="700">ConsultaPolimorfica</text>
+<path d="M 846 441 H 1204" stroke="#9eb2c2" stroke-width="1"/>
+<text x="863" y="466" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ buscar(repo: RepositoryInterface,</text>
+<text x="863" y="490" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">             id: int): ?object</text>
+<text x="863" y="514" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">aceita LivroRepository</text>
+<text x="863" y="538" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">e AutorRepository sem if de classe</text>
+<rect x="45" y="650" width="360" height="170" rx="13" fill="#e7f2ff" stroke="#43617b" stroke-width="2"/>
+<text x="63" y="676" fill="#536a80" font-family="DejaVu Sans" font-size="13">«entidade»</text>
+<text x="63" y="702" fill="#183a55" font-family="DejaVu Sans" font-size="21" font-weight="700">Livro</text>
+<path d="M 46 715 H 404" stroke="#9eb2c2" stroke-width="1"/>
+<text x="63" y="740" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">- id, - titulo, - isbn, - anoPublicacao</text>
+<text x="63" y="764" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">- autores: Autor[]</text>
+<text x="63" y="788" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ alterarTitulo / adicionarAutor</text>
+<text x="63" y="812" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ id / titulo / autores</text>
+<rect x="445" y="650" width="360" height="170" rx="13" fill="#e7f2ff" stroke="#43617b" stroke-width="2"/>
+<text x="463" y="676" fill="#536a80" font-family="DejaVu Sans" font-size="13">«entidade»</text>
+<text x="463" y="702" fill="#183a55" font-family="DejaVu Sans" font-size="21" font-weight="700">Autor</text>
+<path d="M 446 715 H 804" stroke="#9eb2c2" stroke-width="1"/>
+<text x="463" y="740" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">- id, - nome, - nacionalidade</text>
+<text x="463" y="764" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ id / nome / nacionalidade</text>
+<text x="463" y="788" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">+ atribuirId(id)</text>
+<text x="463" y="812" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">ID não pode mudar livremente</text>
+<rect x="845" y="650" width="360" height="170" rx="13" fill="#f6f5f2" stroke="#43617b" stroke-width="2"/>
+<text x="863" y="676" fill="#536a80" font-family="DejaVu Sans" font-size="13">«tabela N:N»</text>
+<text x="863" y="702" fill="#183a55" font-family="DejaVu Sans" font-size="21" font-weight="700">livros_autores</text>
+<path d="M 846 715 H 1204" stroke="#9eb2c2" stroke-width="1"/>
+<text x="863" y="740" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">livro_id: PK, FK → livros.id</text>
+<text x="863" y="764" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">autor_id: PK, FK → autores.id</text>
+<text x="863" y="788" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">PK composta (livro_id, autor_id)</text>
+<text x="863" y="812" fill="#253b4b" font-family="DejaVu Sans Mono" font-size="12.7">impede vínculo duplicado</text>
+<path d="M 445,185 H 405" fill="none" stroke="#5a7388" stroke-width="2.5" marker-end="url(#triangle)"/>
+<text x="407" y="173" font-family="DejaVu Sans" fill="#446275" font-size="13">implementa</text>
+<path d="M 225,376 V 338 H 585 V 298" fill="none" stroke="#5a7388" stroke-width="2.5" marker-end="url(#triangle)"/>
+<text x="345" y="328" font-family="DejaVu Sans" fill="#446275" font-size="13">herda</text>
+<path d="M 620,376 V 298" fill="none" stroke="#5a7388" stroke-width="2.5" marker-end="url(#triangle)"/>
+<text x="632" y="342" font-family="DejaVu Sans" fill="#446275" font-size="13">herda</text>
+<path d="M 845,215 H 805" fill="none" stroke="#5a7388" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="818" y="203" font-family="DejaVu Sans" fill="#446275" font-size="13">PDO</text>
+<path d="M 225,571 V 650" fill="none" stroke="#5a7388" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="230" y="620" font-family="DejaVu Sans" fill="#446275" font-size="13">mapeia Livro</text>
+<path d="M 620,571 V 650" fill="none" stroke="#5a7388" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="630" y="620" font-family="DejaVu Sans" fill="#446275" font-size="13">mapeia Autor</text>
+<path d="M 405,755 H 445" fill="none" stroke="#5a7388" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="342" y="747" font-family="DejaVu Sans" fill="#446275" font-size="13">0..* ↔ 0..*</text>
+<text x="50" y="865" font-family="DejaVu Sans" font-size="14" fill="#587082">Herança, realização da interface e associação entre entidades; a tabela intermediária materializa o N:N no banco.</text>
+</svg>

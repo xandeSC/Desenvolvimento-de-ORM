@@ -1,0 +1,29 @@
+Verificacao local da entrega - BibliotecaORM
+Data de referencia: 17/11/2026
+Ambiente: PHP CLI no ambiente de autoria
+
+$ php tests/domain.php
+[OK] Título obrigatório
+[OK] Nome de autor obrigatório
+[OK] Título normalizado e atributos
+[OK] Identidade inválida e identidade imutável
+[OK] Associação sem autor duplicado
+
+5 testes de domínio aprovados (sem precisar de MySQL).
+
+$ php -l em cada arquivo .php
+No syntax errors detected in ./demo.php
+No syntax errors detected in ./preparar_bancos.php
+No syntax errors detected in ./tests/smoke.php
+No syntax errors detected in ./tests/domain.php
+No syntax errors detected in ./autoload.php
+No syntax errors detected in ./src/Domain/Autor.php
+No syntax errors detected in ./src/Domain/Livro.php
+No syntax errors detected in ./src/Infrastructure/Conexao.php
+No syntax errors detected in ./src/Infrastructure/AutorRepository.php
+No syntax errors detected in ./src/Infrastructure/RepositoryInterface.php
+No syntax errors detected in ./src/Infrastructure/AbstractRepository.php
+No syntax errors detected in ./src/Infrastructure/LivroRepository.php
+No syntax errors detected in ./src/Application/ConsultaPolimorfica.php
+
+Observacao: testes de integracao com MySQL nao executados neste ambiente (sem acesso autenticado ao banco do notebook).
