@@ -1,15 +1,14 @@
 # BibliotecaORM — Avaliação Prática de Programação II
 
-**UNOESC | Ciência da Computação | Professor: Leandro Otavio Cordova Vieira**  
-**Projeto individual: mini-ORM Data Mapper em PHP puro, PDO e MySQL 8**
+**UNOESC | Ciência da Computação | Professor: Leandro Otavio Cordova Vieira** 
 
 ## Objetivo
 
-Implementar mapeamento objeto-relacional próprio (sem Laravel, Doctrine ou ORM externo), com domínio desacoplado do SQL. `Livro` e `Autor` representam as entidades; `AbstractRepository` implementa CRUD reutilizável; `LivroRepository` e `AutorRepository` especializam o mapeamento; `ConsultaPolimorfica` prova a substituição por `RepositoryInterface`.
+Implementar mapeamento objeto-relacional próprio, com domínio desacoplado do SQL. `Livro` e `Autor` representam as entidades; `AbstractRepository` implementa CRUD reutilizável; `LivroRepository` e `AutorRepository` especializam o mapeamento; `ConsultaPolimorfica` prova a substituição por `RepositoryInterface`.
 
 **O projeto não possui tela de navegador:** a avaliação exige um ORM e sua demonstração reproduzível no terminal, não uma interface web.
 
-## Como executar no Windows (notebook Cataneo)
+## Como executar no Windows
 
 1. Instale/use **PHP 8.2+** com a extensão `pdo_mysql` e **MySQL 8.0**. Uma instalação do MySQL já pode existir no notebook.
 2. **Dê dois cliques em `INICIAR_BIBLIOTECAORM.cmd`.**
@@ -95,13 +94,3 @@ O banco de testes **separado** `biblioteca_orm_teste` usa esquema equivalente; `
 ## Limitações conhecidas
 
 O ORM é didático e limitado a PK inteira denominada `id`; sem migrations, query builder genérico, reflection, lazy loading, identity map, otimização de carregamento em lote, transação gerenciada automaticamente pelo repositório, controle de concorrência ou exclusão em cascata automática. `buscarComAutores()` é uma opção explícita para recuperar os autores, não um relacionamento lazy.
-
-## Entrega no portal (prazo da avaliação: 24/11/2026)
-
-- **Repositório Git acessível ao professor, com histórico de commits:** inicialize no seu GitHub como público ou conceda acesso ao professor. A pasta já pode incluir histórico Git local, mas isso **não equivale** à publicação.
-- **Relatório técnico PDF (2 a 4 páginas):** `relatorio/Relatorio_Tecnico_BibliotecaORM.pdf`.
-- **Diagrama de classes:** `diagramas/diagrama_classes.svg` (também PNG e fonte `.drawio`).
-- **Evidências reais:** execute o iniciador e revise o arquivo `evidencias/execucao-*.txt` e faça commit dele (ele não é mais ignorado pelo Git).
-- **Autenticidade:** o autor deve ser capaz de explicar as principais decisões e demonstrar que entende o código.
-
-Sem senhas reais, dados pessoais de terceiros ou diretórios de dependências na publicação.
